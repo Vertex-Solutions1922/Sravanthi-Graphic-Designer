@@ -1,0 +1,256 @@
+/* ======================================
+   HERO BASE
+====================================== */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: radial-gradient(circle at top right, #1e293b, #0f172a);
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* ======================================
+   PARTICLES BACKGROUND
+====================================== */
+
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle, rgba(56,189,248,0.25) 2px, transparent 2px);
+  background-size: 90px 90px;
+  animation: moveParticles 25s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveParticles {
+  0% { background-position: 0 0; }
+  100% { background-position: 800px 800px; }
+}
+
+/* ======================================
+   BACKGROUND TEXT
+====================================== */
+
+.hero-bg-text {
+  position: absolute;
+  bottom: -20px;
+  left: 15%;
+  font-size: clamp(40px, 9vw, 120px);
+  font-weight: 900;
+  letter-spacing: 6px;
+  opacity: 0.04;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+/* ======================================
+   GLASS CARD (REDUCED SIZE)
+====================================== */
+
+.glass-card {
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.04);
+  border-radius: 16px;
+  padding: 28px; /* Reduced */
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  max-width: 520px; /* Smaller card */
+}
+
+/* ======================================
+   CONTAINER
+====================================== */
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+/* ======================================
+   LEFT CONTENT
+====================================== */
+
+.hero-left {
+  flex: 1;
+  max-width: 520px;
+}
+
+.hero-intro {
+  font-size: 15px;
+  opacity: 0.7;
+}
+
+.hero-name {
+  font-size: clamp(40px, 6vw, 75px); /* Reduced */
+  font-weight: 800;
+  margin: 15px 0;
+  background: linear-gradient(90deg, #38BDF8, #0EA5E9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  opacity: 0.85;
+}
+
+/* ======================================
+   BUTTONS WITH BORDER SWEEP
+====================================== */
+
+.hero-cta-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  position: relative;
+  padding: 10px 22px; /* Reduced */
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+.sweep-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+  transition: 0.6s;
+}
+
+.sweep-btn:hover::before {
+  left: 100%;
+}
+
+.primary-btn {
+  background: linear-gradient(90deg, #38BDF8, #0EA5E9);
+  color: #0f172a;
+}
+
+.secondary-btn {
+  border: 1.5px solid #38BDF8;
+  color: #38BDF8;
+  background: transparent;
+}
+
+.outline-btn {
+  border: 1.5px solid #ffffff;
+  background: transparent;
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+}
+
+/* ======================================
+   SOCIALS
+====================================== */
+
+.hero-socials {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+}
+
+.hero-socials a {
+  width: 38px; /* Smaller */
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s;
+  font-size: 14px;
+}
+
+.hero-socials a:hover {
+  background: #38BDF8;
+  transform: translateY(-5px) scale(1.1);
+}
+
+/* ======================================
+   IMAGE + GLOW
+====================================== */
+
+.hero-right {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.image-glow {
+  position: absolute;
+  width: 300px; /* Reduced */
+  height: 300px;
+  background: radial-gradient(circle, rgba(56,189,248,0.4), transparent);
+  border-radius: 50%;
+  filter: blur(70px);
+  animation: glowMove 6s ease-in-out infinite alternate;
+}
+
+@keyframes glowMove {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.15); }
+}
+
+.hero-img {
+  width: clamp(260px, 30vw, 420px); /* Reduced */
+  animation: float 6s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-18px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .glass-card {
+    padding: 24px;
+  }
+
+  .hero-bg-text {
+    font-size: 60px;
+  }
+}

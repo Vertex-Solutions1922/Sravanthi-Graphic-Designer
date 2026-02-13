@@ -1,0 +1,268 @@
+/* =====================================
+   SECTION BASE
+===================================== */
+
+.testimonial-section {
+  position: relative;
+  padding: 120px 6%;
+  background: radial-gradient(circle at top right, #0f172a, #1e293b);
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* =====================================
+   GLOW BACKGROUND
+===================================== */
+
+.testimonial-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  left: -200px;
+  background: radial-gradient(circle, rgba(56,189,248,0.18), transparent);
+  filter: blur(150px);
+  animation: floatGlow 12s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes floatGlow {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(60px); }
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+.testimonial-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 80px;
+}
+
+.testimonial-header h2 {
+  font-size: 22px;
+  letter-spacing: 3px;
+  color: #38BDF8;
+}
+
+.testimonial-header h3 {
+  font-size: 42px;
+  margin: 20px 0;
+  font-weight: 800;
+  background: linear-gradient(90deg, #38BDF8, #0EA5E9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.testimonial-header p {
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* =====================================
+   SWIPER
+===================================== */
+
+.testimonial-swiper {
+  position: relative;
+  z-index: 2;
+}
+
+/* =====================================
+   TESTIMONIAL CARD
+===================================== */
+
+.testimonial-card {
+  position: relative;
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.06);
+  border-radius: 22px;
+  padding: 35px;
+  border: 1px solid rgba(255,255,255,0.08);
+  height: 100%;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+/* Hover depth */
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+  border-color: rgba(56,189,248,0.4);
+}
+
+/* Light sweep animation */
+.testimonial-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.08),
+    transparent
+  );
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.testimonial-card:hover::after {
+  opacity: 1;
+}
+
+/* =====================================
+   CLIENT INFO
+===================================== */
+
+.client-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.client-info img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #38BDF8;
+  transition: 0.4s ease;
+}
+
+.testimonial-card:hover .client-info img {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(56,189,248,0.6);
+}
+
+/* =====================================
+   CLIENT NAME HIGHLIGHT (ADVANCED)
+===================================== */
+
+.client-info h4 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  position: relative;
+
+  background: linear-gradient(90deg, #FACC15, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animated underline sweep */
+
+.client-info h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #FACC15, #FFD700);
+  transition: width 0.4s ease;
+}
+
+.testimonial-card:hover .client-info h4::after {
+  width: 100%;
+}
+
+/* Role styling */
+
+.client-info span {
+  font-size: 13px;
+  opacity: 0.7;
+  display: block;
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* =====================================
+   STAR RATING
+===================================== */
+
+.stars {
+  color: #FACC15;
+  margin-bottom: 15px;
+  display: flex;
+  gap: 5px;
+  font-size: 16px;
+}
+
+.testimonial-card:hover .stars {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+/* =====================================
+   REVIEW TEXT
+===================================== */
+
+.review-text {
+  font-size: 15px;
+  line-height: 1.7;
+  opacity: 0.9;
+  position: relative;
+  padding-left: 18px;
+}
+
+/* Decorative quote mark */
+
+.review-text::before {
+  content: "“";
+  position: absolute;
+  left: 0;
+  top: -5px;
+  font-size: 28px;
+  color: #38BDF8;
+  opacity: 0.4;
+}
+
+/* =====================================
+   SWIPER PAGINATION
+===================================== */
+
+.swiper-pagination-bullet {
+  background: #38BDF8 !important;
+  opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 1024px) {
+  .testimonial-header h3 {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .testimonial-header h3 {
+    font-size: 28px;
+  }
+
+  .testimonial-card {
+    padding: 25px;
+  }
+
+  .client-info img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .client-info h4 {
+    font-size: 17px;
+  }
+}

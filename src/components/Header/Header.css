@@ -1,0 +1,210 @@
+/* =========================
+   GLOBAL HEADER STYLING
+========================= */
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.header-scrolled {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #38BDF8, #0EA5E9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+
+.logo span {
+  font-weight: 800;
+}
+
+/* =========================
+   DESKTOP NAVIGATION
+========================= */
+
+.nav-desktop {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #0EA5E9;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #0EA5E9;
+  transition: 0.3s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: #0EA5E9;
+}
+
+/* =========================
+   CTA BUTTON
+========================= */
+
+.cta-btn {
+  padding: 10px 22px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(90deg, #38BDF8, #0EA5E9);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(14, 165, 233, 0.3);
+}
+
+.cta-btn:hover {
+  box-shadow: 0 8px 25px rgba(14, 165, 233, 0.5);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+.mobile-menu-icon {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #0EA5E9;
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 260px;
+  height: 100vh;
+  background: white;
+  padding: 30px;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+  z-index: 1200;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 22px;
+  cursor: pointer;
+  color: #0EA5E9;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  gap: 25px;
+}
+
+.mobile-nav a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #444;
+  transition: 0.3s;
+}
+
+.mobile-nav a:hover {
+  color: #0EA5E9;
+}
+
+/* =========================
+   QUOTE MODAL
+========================= */
+
+.quote-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.quote-content {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+.quote-content p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0EA5E9;
+}
+
+.quote-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  color: #0EA5E9;
+  font-size: 18px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+  .nav-desktop,
+  .cta-btn {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+}

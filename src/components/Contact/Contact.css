@@ -1,0 +1,175 @@
+/* =====================================
+   SECTION BASE
+===================================== */
+
+.contact-section {
+  position: relative;
+  padding: 120px 6%;
+  background: radial-gradient(circle at bottom left, #0f172a, #1e293b);
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* Glow */
+
+.contact-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  bottom: -200px;
+  right: -200px;
+  background: radial-gradient(circle, rgba(56,189,248,0.2), transparent);
+  filter: blur(150px);
+  z-index: 0;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-header h2 {
+  color: #38BDF8;
+  letter-spacing: 3px;
+  font-size: 20px;
+}
+
+.contact-header h3 {
+  font-size: 40px;
+  margin: 20px 0;
+  font-weight: 800;
+  background: linear-gradient(90deg, #38BDF8, #0EA5E9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-header p {
+  opacity: 0.85;
+}
+
+/* =====================================
+   CONTAINER
+===================================== */
+
+.contact-container {
+  display: flex;
+  gap: 60px;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* =====================================
+   FORM
+===================================== */
+
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.06);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  color: white;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #38BDF8;
+  box-shadow: 0 0 10px rgba(56,189,248,0.4);
+}
+
+/* Button */
+
+.contact-btn {
+  padding: 14px;
+  background: linear-gradient(90deg, #38BDF8, #0EA5E9);
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(56,189,248,0.4);
+}
+
+/* =====================================
+   INFO SIDE
+===================================== */
+
+.contact-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.info-box {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.06);
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.3s ease;
+}
+
+.info-box:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56,189,248,0.4);
+}
+
+.info-box svg {
+  font-size: 28px;
+  color: #38BDF8;
+}
+
+.info-box a {
+  color: white;
+  text-decoration: none;
+}
+
+.info-box a:hover {
+  color: #38BDF8;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 992px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-header h3 {
+    font-size: 28px;
+  }
+}
